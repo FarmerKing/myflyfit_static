@@ -17,7 +17,7 @@ module.exports = function (grunt) {
         connect: {
             all: {
                 options: {
-                    port: 9000,
+                    port: 8000,
                     hostname: "0.0.0.0",
                     // No need for keepalive anymore as watch will keep Grunt running
                     //keepalive: true,
@@ -44,7 +44,7 @@ module.exports = function (grunt) {
         open: {
             all: {
                 // Gets the port from the connect configuration
-                path: 'http://localhost:9000/'
+                path: 'http://localhost:8000/'
             }
         },
 
