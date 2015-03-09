@@ -1,0 +1,253 @@
+/*
+ light-blue color: #27ccc0;
+
+ */
+
+
+body {
+    padding-top: 104px;
+    /*padding-bottom: 20px;*/
+
+    background: white;
+    /*font-family: ;*/
+    font-family: 'Source Sans Pro';
+    color: #777;
+}
+
+/* reset the padding for brand */
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* set pageheader (global) style */
+.header { 
+    padding: 25px;
+    background: #fff;
+    z-index: 9999;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+
+    /* font */
+    font-weight: bold;
+
+    /* clear margin bottom  */
+    margin-bottom: 0;
+}
+
+/* set nav header navigation button */
+.navbar-header > button {
+    /*background: #225742;*/
+    /*color: #fff !important;*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+.navbar-header > button > .icon-bar {
+    background-color: #27ccc0; 
+    height: 3px;
+}
+
+/* nav list color */
+.navbar-nav > .nav-item > a {
+    color: #27ccc0;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+}
+.navbar-nav > .nav-item.active a {
+    color: #ffd53d;
+    background: none;
+}
+.navbar-nav > .nav-item a:hover {
+    color: #ffd53d;
+    background: none;
+}
+.navbar-nav > .nav-item a:focus {
+    outline: none;
+    background: none;
+}
+.navbar-nav > .nav-item a:active {
+    outline: none;
+    background: none;
+}
+.navbar-nav > .nav-item.active {
+    color: #ffd53d;
+}
+
+/* nav mobile collapse */
+@media (max-width: 767px) {
+    /* set margin left, top*/
+    .navbar-nav {
+        margin-left: 20px;
+        margin-top: 20px;        
+    }
+
+    .navbar-nav>li>a {
+        line-height: 2em; 
+    }
+}
+
+/* video: mejs */
+.mejs-container .mejs-controls {
+    display: none !important;
+}
+
+/* full width background */
+.full-width-section {
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    box-sizing: content-box!important;
+    -moz-box-sizing: content-box!important;
+    -webkit-box-sizing: content-box!important;
+    width: 100%;
+    position: relative;
+    z-index: 0;    
+    padding: 0;
+}
+
+.bg-text-section {
+    padding: 150px 170px;
+}
+
+.title_01 {
+    font-size: 50px;
+    line-height: 1.2em;
+    color: #FFF;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+.title_02 {
+    font-size: 50px;
+    line-height: 1.2em;
+    color: #ffbf00;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+.title_03 {
+    font-size: 50px;
+    line-height: 1.2em;
+    color: #27ccc0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+.title_05 {
+    font-size: 50px;
+    line-height: 1em;
+    color: #4c4c4c;
+}
+@media (max-width: 530px) {
+    .title_01 {
+        font-size: 45px;
+    }
+    .title_02 {
+        font-size: 45px;
+    }
+    .title_03 {
+        font-size: 45px;
+    }
+}
+@media (max-width: 470px) {
+    .title_01 {
+        font-size: 35px;
+    }
+    .title_02 {
+        font-size: 35px;
+    }
+
+    .title_03 {
+        font-size: 35px;
+    }
+}
+
+.content_01 {
+    font-size: 22px;
+    line-height: 1.64em;
+    color: #FFF;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+.content_04 {
+    font-size: 22px;
+    line-height: 1.6em;
+    color: #4c4c4c;
+}
+
+/* the main content: press logo, ... */
+#main{
+    /* reset margin */
+    width:100%;
+    background-color: #F5F5F5; 
+}
+
+#main .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* press logo: tc, mashable, wall street, ... thumbnail */
+#press_logo {
+    padding: 50px 40px 20px;
+}
+#press_logo .thumbnail {
+    background-color: inherit;
+    border: 0 solid transparent;
+}
+
+/* first block */
+#block1 {
+    padding: 30px 0 30px 0;
+}
+#block1 > div.row > div {
+    padding-top:110px;
+    padding-left:50px;
+    padding-right:50px;
+    height:660px;
+    background:rgba(0%,0%,0%,0.5);
+}
+@media (max-width: 570px) {
+    #block1 > div.row > div {
+        padding-left: 30px;
+        padding-right:30px;        
+    }
+}
+
+
+/* the carousel block */
+#blockcarousel {
+    padding:0;
+}
+
+
+/* block 3: bg blue */
+#block3 > div.row > div {
+}
+
+
+
+/* block 5: bg yellow */
+#block5 > div.row > div {
+}
+
+
+#footer-outer {
+    color: #ccc;
+    position: relative;
+    z-index: 10;
+    padding: 0;
+    background-color: #313233;
+}
+#footer-outer > footer {
+    padding: 20px 0px;
+    font-size: 12px;
+    background-color: #1f1f1f;
+    border-top: 1px solid #3a3a3a;
+    color: #777;
+}

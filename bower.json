@@ -1,0 +1,23 @@
+{
+  "name": "myflyfit",
+  "version": "1.0.0",
+  "authors": [
+    "FarmerKing <king_chen@mail2000.com.tw>"
+  ],
+  "main": "app/index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.2",
+    "bootstrap": "~3.3.2",
+    "mediaelement": "~2.16.4"
+  }
+}
