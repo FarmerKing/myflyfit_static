@@ -13,6 +13,7 @@
         <!-- <link rel="stylesheet" href="css/normalize.css"> -->
         <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="components/mediaelement/build/mediaelementplayer.css" />
+        <link rel="stylesheet" href="components/swiper/dist/css/swiper.min.css">
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic&subset=latin,cyrillic-ext,cyrillic,greek-ext,greek,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
         <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,cyrillic,greek-ext,greek,vietnamese,latin-ext' rel='stylesheet' type='text/css'> -->
         <style>
@@ -40,7 +41,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item active"><a href="#promo">Home</a></li>
-                    <li class="nav-item"><a href="#features">Pre-Order</a></li>
+                    <li class="nav-item"><a href="https://www.shopstarter.com/p/522669502/flyfit-unique-ankle-tracker-for-fitness-cycling-an/">Pre-Order</a></li>
                     <li class="nav-item"><a href="#how">How it works</a></li>
                     <li class="nav-item"><a href="#faq">Who We Are</a></li>
                     <li class="nav-item last"><a href="#contact">Contact Us</a></li>
@@ -149,59 +150,121 @@
                 </div>
             </div>
 
-            <div id="blockcarousel" class="container-fluid full-width-section" >
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                  <!-- Indicators -->
-                  <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                  </ol>
 
-                  <!-- Wrapper for slides -->
-                  <div class="carousel-inner" role="listbox">
-
-                    <div class="item active">
-                        <img src="img/indexbg_06.jpg" alt=""/>
-                        <div class="carousel-caption">
-<!--                             <h2>At the Gym</h2>
-                            <p>Track Your Workout Stats Anytime, Anywhere
-Simultaneously shows your walking, jogging and cycling pace, calories burned, and how far you go while you are working out.</p>
- -->                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="img/indexbg_05.jpg" alt=""/>
-                        <div class="carousel-caption">
+            <!-- Swiper slide -->
+            <div class="swiper-container" style="height: 650px" >
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-bg-alignment="center" style="background-image: url(http://www.myflyfit.com/wp-content/uploads/2014/03/indexbg_06.jpg);">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-offset-0 col-sm-12 col-md-offset-6 col-md-6 content">
+                                    <h2>At the Gym</h2>
+                                    <p>Track Your Workout Stats Anytime, Anywhere Simultaneously shows your walking, jogging and cycling pace, calories burned, and how far you go while you are working out.</p>                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="item">
-                        <img src="img/indexbg_04.jpg" alt=""/>
-                        <div class="carousel-caption">
+                    <div class="swiper-slide" data-bg-alignment="center" style="background-image: url(http://www.myflyfit.com/wp-content/uploads/2014/03/indexbg_05.jpg);">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-offset-0 col-sm-12 col-md-offset-6 col-md-6 content">
+                                    <h2>On the Go</h2>
+                                    <p>Access Your Stats on the Go. Accurately.<br>
+Flyfit’s unique motion-sensing technology detects and tracks your cycling stats so you can instantly view how far and how fast you are going via the easy-to-use mobile app.</p>                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="item">
-                        <img src="img/indexbg_03.jpg" alt=""/>
-                        <div class="carousel-caption">
+                    <div class="swiper-slide" data-bg-alignment="center" style="background-image: url(http://www.myflyfit.com/wp-content/uploads/2014/03/indexbg_04.jpg);">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-offset-0 col-sm-12 col-md-offset-6 col-md-6 content">
+                                    <h2>Swim</h2>
+                                    <p>The Experience Goes Beyond the Gym<br>
+                                        FlyFit is water-proof. <br>
+                                        Just dive into the pool and enjoy your morning swim.<br>
+                                        We are with you every step of the way.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
+                    <div class="swiper-slide" data-bg-alignment="center" style="background-image: url(http://www.myflyfit.com/wp-content/uploads/2014/03/indexbg_03.jpg);">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-offset-0 col-sm-12 col-md-offset-6 col-md-6 content">
+                                    <h2>Sleep</h2>
+                                    <p>Track Your Sleep Pattern<br>
+                                        When you turn on the sleep mode, it can track how many hours you've slept, how many times you've woken up and help determine your overall sleep quality.</p>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>            
 
             <!--  block 3 -->
             <div id="block3" class="container-fluid full-width-section" style="background-image: url(img/indexbg_07.jpg); background-position: 50% 50%; background-repeat: no-repeat;">
-                <div class="row" >
-                    <div class="col-xs-6 bg-text-section">
-                        <span class="title_01">Designed With Awesomeness</span>
-                        <img class="hr" src="img/line.png" alt="" width="100%" height="10">
+                <div class="row" style="padding: 150px 166px">
+                    <div class="col-md-6">
+                        <span class="title_04">Designed With Awesomeness</span>
+                        <img class="hr" src="img/line_03.png" alt="" width="90%">
 
-                        <img class="hr img-responsive" src="img/band_1.png" alt="" height="280">
+                        <img style="margin-top: 50px" class="hr img-responsive" src="img/band_1.png" alt="" >
 
+                    </div>
+                    <div class="col-md-6" style="padding-left:50px">
+                        <div class="media" style="margin-bottom:35px">
+                          <div class="media-left media-middle">
+                            <div href="#">
+                              <img class="media-object" src="img/icon_011.png" alt="">
+                            </div>
+                          </div>
+                          <div class="media-body" style="vertical-align: middle;">
+                            <h4 class="media-heading content_02">Real-time tracking</h4>
+                          </div>
+                        </div>
+                        <div class="media" style="margin-bottom:35px">
+                          <div class="media-left media-middle">
+                            <div href="#">
+                              <img class="media-object" src="img/icon_021.png" alt="">
+                            </div>
+                          </div>
+                          <div class="media-body" style="vertical-align: middle;">
+                            <h4 class="media-heading content_02">Motion sensing</h4>
+                          </div>
+                        </div>
+                        <div class="media" style="margin-bottom:35px">
+                          <div class="media-left media-middle">
+                            <div href="#">
+                              <img class="media-object" src="img/icon_031.png" alt="">
+                            </div>
+                          </div>
+                          <div class="media-body" style="vertical-align: middle;">
+                            <h4 class="media-heading content_02">App-supported</h4>
+                          </div>
+                        </div>
+                        <div class="media" style="margin-bottom:35px">
+                          <div class="media-left media-middle">
+                            <div href="#">
+                              <img class="media-object" src="img/icon_041.png" alt="">
+                            </div>
+                          </div>
+                          <div class="media-body" style="vertical-align: middle;">
+                            <h4 class="media-heading content_02">Connectivity</h4>
+                          </div>
+                        </div>
+                        <div class="media" style="margin-bottom:35px">
+                          <div class="media-left media-middle">
+                            <div href="#">
+                              <img class="media-object" src="img/icon_052.png" alt="">
+                            </div>
+                          </div>
+                          <div class="media-body" style="vertical-align: middle;">
+                            <h4 class="media-heading content_02">Personal & Social</h4>
+                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -210,17 +273,70 @@ Simultaneously shows your walking, jogging and cycling pace, calories burned, an
             <div id="block_kickstarter" class="container-fluid full-width-section" style="background-color: rgb(242, 242, 242); ">
                 <div class="row" >
                     <div class="col-xs-12" style="text-align: center;padding:50px 170px">
-                        <img class="hr img-responsive" src="img/kick_starter.jpg" style="display:inline"alt="" >
+                        <a href="https://www.kickstarter.com/projects/522669502/flyfit-unique-ankle-tracker-for-fitness-cycling-an"><img class="hr img-responsive" src="img/kick_starter.jpg" style="display:inline"alt="" ></a>
                     </div>
                 </div>
             </div>
 
+
+            <!-- yello background -->
+            <div id="block3" class="container-fluid full-width-section" style="background-image: url(img/indexbg_08.jpg); background-position: 50% 50%; background-repeat: no-repeat;">
+                <div class="row" style="padding: 150px 120px 150px 150px ">
+                    <div class="col-md-4">
+                        <span class="title_04">It Just Works</span>
+                        <img class="hr" src="img/line_03.png" alt="" width="100%">
+
+                        <div style="margin-top:50px" class="content_03">Feather light, sleek and accurate. The only device you’ll ever need to track and monitor your physical activity. Flyfit captures your leg movements and accurately tracks your cycling, jogging, spinning and other cardio activities.</div>
+
+                    </div>
+                    <div class="col-md-8" style="padding-left:50px">
+                        <img src="img/pic_01.png" height="388" width="226"/>
+                        <img src="img/pic_02.png" />
+                        <img src="img/pic_03.png" />
+                    </div>
+                </div>
+            </div>            
+
             <!--  block 5 -->
             <div id="block5" class="container-fluid full-width-section" style="background-image: url(img/indexbg_09.jpg); background-position: 0% 50%; background-repeat: no-repeat;">
-                <div class="row" >
-                    <div class="col-xs-offset-5 col-xs-6 bg-text-section">
+                <div class="row" style="padding:150px 120px;">
+                    <div class="col-xs-offset-0 col-xs-12 col-md-offset-6 col-md-6">
                         <span class="title_05">LOVE OUR <br/> ANKLE BAND?</span>
                         <div class="content_04" style="margin-top:63px;font-weight:300;letter-spacing:1px;">Be the first to experience this cutting-edge wearable tech! Pre-order now on kickstarter.</div>
+                        <a style="margin-top:50px;background: #27CCC0;border-color: #27CCC0;color: #fff;padding: 20px 50px;"class="btn btn-default btn-lg" href="https://www.shopstarter.com/p/522669502/flyfit-unique-ankle-tracker-for-fitness-cycling-an/" role="button">PRE-ORDER NOW!!!</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final block -->
+            <div id="footer_block6" class="container-fluid full-width-section" style="background-color: #313233">
+                <div class="row" style="padding:50px 0px;">
+                    <div class="col-xs-4 col-sm-offset-1 col-sm-3 col-md-offset-1 col-md-2 col-lg-offset-2 col-lg-2">
+                        <img class="img-footer" src="img/footer_011.jpg" style="height=165;width:264px" />
+                    </div>
+                    <div class="col-xs-4 col-sm-offset-1 col-sm-3 col-md-offset-1 col-md-3 col-lg-2">
+                        <h4 class="copyright">FLYFIT</h4>
+                        <ul style="padding: 0; margin-top:20px">
+                            <li><a href="#" class="footer_link">What it is</a>
+                                <img src="img/line_03.jpeg" style="width:100%;height:auto" height="19" />
+                            </li>
+                            <li><a href="#" class="footer_link">How it works</a>
+                                <img src="img/line_03.jpeg" style="width:100%;height:auto" height="19" />
+                            </li>
+                            <li><a href="https://www.shopstarter.com/p/522669502/flyfit-unique-ankle-tracker-for-fitness-cycling-an/" class="footer_link">Pre-order</a>
+                                <img src="img/line_03.jpeg" style="width:100%;height:auto" height="19" />
+                            </li>
+                            <li><a href="#" class="footer_link">Who we are</a>
+                                <img src="img/line_03.jpeg" style="width:100%;height:auto" height="19" />
+                            </li>
+                            <li><a href="#" class="footer_link">Hang with us</a>
+                                <img src="img/line_03.jpeg" style="width:100%;height:auto" height="19" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-offset-1 col-xs-3 col-sm-2">
+                        <h4 class="copyright">VISIT US ON</h4>
+                        <img class="img-footer" src="img/footer_021.jpg" style="height:75;width142"/>
                     </div>
                 </div>
             </div>
@@ -240,6 +356,9 @@ Simultaneously shows your walking, jogging and cycling pace, calories burned, an
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="components/mediaelement/build/mediaelement-and-player.js"></script>
+        <script src="components/swiper/dist/js/swiper.jquery.min.js"></script>
+        <script src="components/swiper/dist/js/swiper.min.js"></script>
+
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
@@ -308,6 +427,14 @@ Simultaneously shows your walking, jogging and cycling pace, calories burned, an
 
         }(jQuery));
 
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false
+        });
         // jQuery(document).ready(function(){   
         //     $('video').mediaelementplayer({
         //         // videoWidth: '100%',

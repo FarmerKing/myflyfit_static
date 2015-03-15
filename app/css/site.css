@@ -9,9 +9,13 @@ body {
     /*padding-bottom: 20px;*/
 
     background: white;
-    /*font-family: ;*/
-    font-family: 'Source Sans Pro';
+    font-family: "OpenSansRegular";
+    /*font-family: 'Source Sans Pro';*/
     color: #777;
+
+    -webkit-font-smoothing: antialiased;    
+
+    line-height: 22px;
 }
 
 /* reset the padding for brand */
@@ -138,6 +142,12 @@ body {
     text-shadow: 1px 1px 2px rgba(0,0,0,.3);
 }
 
+.title_04 {
+  font-size: 50px;
+  line-height: 1.2em;
+  color: #FFF;
+}
+
 .title_05 {
     font-size: 50px;
     line-height: 1em;
@@ -174,10 +184,42 @@ body {
     text-shadow: 1px 1px 2px rgba(0,0,0,.3);
 }
 
+.content_02 {
+  font-size: 26px;
+  line-height: 1.64em;
+  color: #FFF;
+}
+
+.content_03 {
+  font-size: 22px;
+  line-height: 1.5em;
+  color: #FFF;
+}
+
 .content_04 {
     font-size: 22px;
     line-height: 1.6em;
     color: #4c4c4c;
+}
+
+.copyright {
+  font-size: 12px;
+  line-height: 1em;
+  color: #666;
+}
+
+a.footer_link{
+    display: block;
+}
+a.footer_link:visited {
+  font-size: 12px;
+  color: #FFF;
+  text-decoration: none;
+}
+a.footer_link:link {
+  font-size: 12px;
+  color: #FFF;
+  text-decoration: none;
 }
 
 /* the main content: press logo, ... */
@@ -220,11 +262,81 @@ body {
 }
 
 
-/* the carousel block */
+/* the carousel block: swiper ; */
 #blockcarousel {
     padding:0;
 }
 
+.swiper-slide[data-bg-alignment="center"] {
+    background-position: center center;
+}
+
+.swiper-pagination span.swiper-pagination-bullet-active {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    border: 1px solid #fff;
+    background-color: transparent;
+    border-radius: 10px 10px 10px 10px;
+    cursor: pointer;
+    display: inline-block;
+    height: 10px;
+    margin: 0 4px;
+    width: 10px;
+    transition: background-color 0.2s linear, border-color 0.2s linear;
+    -moz-transition: background-color 0.2s linear, border-color 0.2s linear;
+    -webkit-transition: background-color 0.2s linear, border-color 0.2s linear;
+    -o-transition: background-color 0.2s linear, border-color 0.2s linear;
+}
+
+/* swiper container content */
+.swiper-container  .container, .swiper-container  .container > .row {
+    height: 100%;
+}
+.swiper-container .content {
+    color: #fff;
+    z-index: 100;
+    top: 40%;
+}
+@media (max-width: 1200px) {
+    .swiper-container .content {
+        top: 25%;
+    }
+}
+@media (max-width: 768px) {
+    .swiper-container .content {
+        top: 20%;
+    }
+}
+
+.swiper-container .content h2 {
+    font-size: 60px;
+    line-height: 80px;
+    letter-spacing: -1px;
+    display: block;
+    color: #fff;
+    font-weight: 100;
+    font-family: 'OpenSansLight';
+    -webkit-font-smoothing: antialiased;    
+}
+.swiper-container .content p {
+    font-weight: 100;
+    letter-spacing: 0.5px;
+    font-family: 'OpenSansLight';
+    -webkit-font-smoothing: antialiased;
+    font-size: 24px;
+    line-height: 38px;
+    padding: 4px 0px;
+    display: inline;
+    position: relative;
+    left: 10px;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 0 0 rgba(0, 0, 0, 0.5), -10px 0 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 10px 0 0 rgba(0, 0, 0, 0.5), -10px 0 0 rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 10px 0 0 rgba(0, 0, 0, 0.5), -10px 0 0 rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 10px 0 0 rgba(0, 0, 0, 0.5), -10px 0 0 rgba(0, 0, 0, 0.5);
+}
 
 /* block 3: bg blue */
 #block3 > div.row > div {
@@ -236,7 +348,19 @@ body {
 #block5 > div.row > div {
 }
 
+/* block footer black bg*/
+#footer_block6 ul li {
+    padding: 0; 
+    margin: 0;
+    list-style: none;
+}
 
+/*#footer_block6 ul li:after{
+    height: 19px;
+    content: url(../img/line_03.jpeg);
+    width: 80%;
+}
+*/
 #footer-outer {
     color: #ccc;
     position: relative;
@@ -250,4 +374,13 @@ body {
     background-color: #1f1f1f;
     border-top: 1px solid #3a3a3a;
     color: #777;
+}
+
+
+/* nav mobile collapse */
+@media (max-width: 768px) {
+    .img-footer {
+        width: 100% !important; 
+        height: auto !important;
+    }
 }
