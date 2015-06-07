@@ -9,7 +9,9 @@ body {
     /*padding-bottom: 20px;*/
 
     background: white;
-    font-family: "OpenSansRegular";
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    /*font-family: "PT Sans", sans-serif;*/
+    /*font-family: "OpenSansRegular";*/
     /*font-family: 'Source Sans Pro';*/
     color: #777;
 
@@ -60,6 +62,9 @@ body {
 
 /* nav list color */
 .navbar-nav > .nav-item > a {
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
     color: #27ccc0;
     -webkit-transition: none;
     -moz-transition: none;
@@ -242,21 +247,21 @@ body {
 }
 
 .copyright {
-  font-size: 12px;
+  font-size: 14px;
+  font-family: "PT Sans", sans-serif;
   line-height: 1em;
   color: #666;
 }
 
 a.footer_link{
+    font-size: 12px;
     display: block;
 }
 a.footer_link:visited {
-  font-size: 12px;
   color: #FFF;
   text-decoration: none;
 }
 a.footer_link:link {
-  font-size: 12px;
   color: #FFF;
   text-decoration: none;
 }
@@ -365,13 +370,13 @@ a.footer_link:link {
     display: block;
     color: #fff;
     font-weight: 100;
-    font-family: 'OpenSansLight';
+    font-family: "PT Sans";
     -webkit-font-smoothing: antialiased;    
 }
 .swiper-container .content p {
     font-weight: 100;
     letter-spacing: 0.5px;
-    font-family: 'OpenSansLight';
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 24px;
     line-height: 38px;

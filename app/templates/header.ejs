@@ -12,18 +12,20 @@
     <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item  <% if(active == 'home') { %>active<% } %>"><a href="/">Home</a></li>
-            <li class="nav-item"><a href="https://www.shopstarter.com/p/522669502/flyfit-unique-ankle-tracker-for-fitness-cycling-an/">Pre-Order</a></li>
+            <li class="nav-item"><a href="https://www.shopstarter.com/p/522669502/flyfit-unique-ankle-tracker-for-fitness-cycling-an/">Order</a></li>
             <li class="nav-item <% if(active == 'how') { %>active<% } %>"><a href="/how-it-works.html">How it works</a></li>
+            <li class="nav-item <% if(active == 'support') { %>active<% } %>"><a href="#">Support</a></li>
+            <li class="nav-item <% if(active == 'support') { %>active<% } %>"><a href="#">FAQs</a></li>
             <!-- <li class="nav-item"><a href="#faq">Who We Are</a></li> -->
-            <li class="nav-item <% if(active == 'contact') { %>active<% } %>"><a href="/contact-us.html">Contact Us</a></li>
             <li class="dropdown nav-item <% if(active == 'other') { %>active<% } %>">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">FAQs <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Policies <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li class="nav-item"><a href="/privacy.html">Privacy Policy</a></li>
                     <li class="nav-item"><a href="/return-policy.html">Return Policy</a></li>
                     <li class="nav-item"><a href="/safety.html">Safety Term & Condition</a></li>
                 </ul>
             </li>
+            <li class="nav-item <% if(active == 'contact') { %>active<% } %>"><a href="/contact-us.html">Contact Us</a></li>
             <!-- <li class="nav-item last <% if(active == 'other') { %>active<% } %>"><a href="/privacy.html">Other</a></li> -->
         </ul>
     </div><!--/.navbar-collapse -->
