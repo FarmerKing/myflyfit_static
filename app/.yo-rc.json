@@ -1,0 +1,38 @@
+{
+  "generator-rf": {
+    "appname": "app",
+    "mkTestDirs": true,
+    "withBootstrap": false,
+    "description": "A React/Flux app generate by RF, powered with Babel",
+    "dialect": "Babel",
+    "scriptSuffix": ".js",
+    "testFileExtensions": [
+      "js"
+    ],
+    "dialectModuleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "stylesheet": "Less",
+    "stylesheetSuffix": ".less",
+    "bootstrapLoaders": {},
+    "devDependencies": {
+      "css-loader": "*",
+      "file-loader": "*",
+      "jest-cli": "*",
+      "react-hot-loader": "*",
+      "react-tools": "*",
+      "style-loader": "*",
+      "url-loader": "*",
+      "webpack-dev-server": "*",
+      "webpack": "*",
+      "babel-loader": "*",
+      "babel-jest": "*",
+      "less": "*",
+      "less-loader": "*"
+    },
+    "dialectTest": ".jsx?",
+    "dialectLoader": "react-hot!babel",
+    "stylesheetLoader": "style!css!less"
+  }
+}
