@@ -35,19 +35,13 @@
         <nav id="header"></nav>
 
         <!-- https://www.youtube.com/watch?v=_3FQCkJERM4 -->
-        <div class="container-fluid" style="padding:0">
+<!--         <div class="container-fluid" style="padding:0">
             <div id="map" >
             </div>
         </div>
-
-        <div id="main">
-
-            <div class="container-fluid full-width-section" style="background-color: #fff; ">
-                <div class="row" >
-                    <div class="col-xs-12" style="text-align: center;padding:50px 170px">
-                        Want to reach us? Please email us at <a href="mailto:service@myflyfit.com">service@myflyfit.com</a>.
-                    </div>
-                </div>
+ -->
+        <div>
+            <div class="container" id="contact-us">                
             </div>
 
             <!-- Final block -->
@@ -75,6 +69,7 @@
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="/js/contact-us.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -95,7 +90,7 @@
                 zoom: 12,
                 center: myLatlng
             };
-            map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            // map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
             var marker = new google.maps.Marker({
                   position: myLatlng,
@@ -105,45 +100,6 @@
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
-        // jQuery(document).ready(function(){   
-        //     $('video').mediaelementplayer({
-        //         // videoWidth: '100%',
-        //         // videoHeight: '100%',
-        //         plugins: ['flash'],
-        //         enableAutosize: true,
-        //         flashName: 'video/flashmediaelement.swf',
-        //         loop: true,
-        //         alwaysShowHours: false,
-        //         features:[],
-        //         showTimecodeFrameCount: false,
-        //         // Hide controls when playing and mouse is not over the video
-        //         alwaysShowControls: false,
-        //         success: function (mediaElement, domObject, mediaElementPlayer) { 
-                       
-        //             // add event listener
-        //             mediaElement.addEventListener('timeupdate', function(e) {
-        //                 // document.getElementById('current-time').innerHTML = mediaElement.currentTime;                     
-        //             }, false);
-
-        //             mediaElementPlayer.media.addEventListener( 'canplay', function () {
-        //                 console.log("canplay");
-        //                 mediaElement.play();
-        //             }, false );
-
-        //             mediaElementPlayer.media.addEventListener( 'ended', function () {
-        //                 console.log("ended");
-        //                 mediaElement.play();
-        //             }, false );                
-                       
-        //             // call the play method
-        //             mediaElement.play();
-        //         },
-        //         error: function () { 
-        //             console.log("error");
-        //         }
-        //     });
-
-        // });
         </script>
     </body>
 </html>

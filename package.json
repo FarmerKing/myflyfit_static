@@ -1,13 +1,43 @@
 {
-    "name": "myflyfit",
-    "version": "0.0.0",
-    "devDependencies": {
-        "grunt": "~0.4.2",
-        "grunt-contrib-connect": "~0.6.0",
-        "grunt-contrib-cssmin": "~0.7.0",
-        "grunt-regarde": "~0.1.1",
-        "grunt-open": "~0.2.1",
-        "matchdep": "~0.1.1",
-        "grunt-contrib-livereload": "0.1.1"
-    }
+  "name": "myflyfit",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "webpack -p",
+    "dev": "webpack-dev-server --port 8000 --colors --content-base ./app_static",
+    "test": "jest"
+  },
+  "dependencies": {
+    "babel": "^5.5.8",
+    "classnames": "^2.1.2",
+    "flux": "^2.0.3",
+    "object-assign": "^2.0.0",
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.23.1",
+    "react-router": "^0.13.3",
+    "react-select": "^0.4.9",
+    "superagent": "^1.2.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-regarde": "~0.1.1",
+    "grunt-open": "~0.2.1",
+    "matchdep": "~0.1.1",
+    "grunt-contrib-livereload": "0.1.1",
+    "css-loader": "*",
+    "file-loader": "*",
+    "jest-cli": "*",
+    "react-hot-loader": "*",
+    "react-tools": "*",
+    "style-loader": "*",
+    "url-loader": "*",
+    "webpack-dev-server": "*",
+    "webpack": "*",
+    "babel-loader": "*",
+    "babel-jest": "*",
+    "less": "*",
+    "less-loader": "*"
+  }
 }
