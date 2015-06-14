@@ -2,7 +2,7 @@ require("babel/polyfill");
 require("../assets/stylesheets/style.less");
 
 // third party css 
-require("../../components/react-select/dist/default.css"); 
+require("../../../app_static/components/react-select/dist/default.css"); 
 
 // TODO: Require assets here.
 // require("../assets/images/product.png");
