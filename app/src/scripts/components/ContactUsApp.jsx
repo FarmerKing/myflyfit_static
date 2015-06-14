@@ -1,5 +1,6 @@
 import React from "react";
 import Underscore from "underscore";
+import Request from "superagent";
 import Select from "react-select";
 import Classnames from "classnames";
 
@@ -90,42 +91,50 @@ const Step2 = React.createClass({
                 <div className="form-group">
                     <label className="control-label">* = required field</label>
                 </div>
-                <Input ref="firstName" type="text" hasFeedback 
+                <Input name="firstname" ref="firstName" type="text" hasFeedback 
+                       value={this.props.firstName}
                        bsStyle={this.props.firstNameStatus || ""}
                        help={this.props.firstNameHelp || ""}
                        onChange={ e => this.props.onChange("firstName", this.refs.firstName.getValue())}
                        label="First Name *"/>
-                <Input ref="lastName" type="text" hasFeedback 
+                <Input name="lastname" ref="lastName" type="text" hasFeedback 
+                       value={this.props.lastName}
                        bsStyle={this.props.lastNameStatus || ""}
                        help={this.props.lastNameHelp || ""}
                        onChange={ e => this.props.onChange("lastName", this.refs.lastName.getValue())}
                        label="Last Name *"/>
-                <Input ref="email" type="text" hasFeedback 
+                <Input name="email" ref="email" type="text" hasFeedback 
+                       value={this.props.email}
                        bsStyle={this.props.emailStatus || ""}
                        help={this.props.emailHelp || ""}
                        onChange={ e => this.props.onChange("email", this.refs.email.getValue())}
                        label="Email *"/>
-                <Input ref="phone" type="text" 
+                <Input name="phone" ref="phone" type="text" 
+                       value={this.props.phone}
                        onChange={ e => this.props.onChange("phone", this.refs.phone.getValue())}
                        label="Phone"/>
-                <Input ref="subject" type="text" hasFeedback 
+                <Input name="subject" ref="subject" type="text" hasFeedback 
+                       value={this.props.subject}
                        bsStyle={this.props.subjectStatus || ""}
                        help={this.props.subjectHelp || ""}
                        onChange={ e => this.props.onChange("subject", this.refs.subject.getValue())}
                        label="Subject *" 
                        placeholder="Please enter a subject"/>
-                <Input ref="description" type="textarea" hasFeedback 
+                <Input name="description" ref="description" type="textarea" hasFeedback 
+                       value={this.props.description}
                        bsStyle={this.props.descriptionStatus || ""}
                        help={this.props.descriptionHelp || ""}
                        onChange={ e => this.props.onChange("description", this.refs.description.getValue())}
                        label="Description *" 
                        placeholder="Please explain your issue"/>
-                <Input ref="shippingCountry" type="text" hasFeedback 
+                <Input name="country" ref="shippingCountry" type="text" hasFeedback 
+                       value={this.props.shippingCountry}
                        bsStyle={this.props.shippingCountryStatus || ""}
                        help={this.props.shippingCountryHelp || ""}
                        onChange={ e => this.props.onChange("shippingCountry", this.refs.shippingCountry.getValue())}
                        label="Shipping Country *" />
-                <Input ref="orderNumber" type="text" hasFeedback 
+                <Input name="ordernumber" ref="orderNumber" type="text" hasFeedback 
+                       value={this.props.orderNumber}
                        bsStyle={this.props.orderNumberStatus || ""}
                        help={this.props.orderNumberHelp || ""}
                        onChange={ e => this.props.onChange("orderNumber", this.refs.orderNumber.getValue())}
@@ -145,6 +154,7 @@ const App = React.createClass({
             step: 1,
             issueType: null,
             issueSubType: null,
+            isInSubmit: false,
 
             firstName: "",
             lastName: "", 
@@ -173,7 +183,37 @@ const App = React.createClass({
         }
 
         if(submit){
-            console.log("submit");
+          var data = Object.assign({}, this.state, {
+            issueType: this.state.issueType.label || "", 
+            issueSubType: this.state.issueSubType.label || "", 
+          })
+          Request.post("//54.65.94.248:3000/contactUs")
+          .set("Accept", "application/json")
+          .query(data)
+          .end( (e,res) => {
+              if(e || !res.status.toString().match(/^2/) ){
+                console.log("error");
+              }else{
+                alert("Messages sent to service@myflyfit.com")
+                this.setState({
+                  submit:false,
+                  isInSubmit: false,
+                  issueType: null,
+                  issueSubType: null,
+                  firstName: "",
+                  lastName: "", 
+                  email: "", 
+                  phone: "", 
+                  subject: "", 
+                  description: "",
+                  shippingCountry: "", 
+                  orderNumber: ""
+                });
+              }
+          });
+          this.setState({
+            isInSubmit: true
+          });
         }else{
             this.setState(newState);
         }
@@ -197,7 +237,7 @@ const App = React.createClass({
                                     }
                                     this.setState(newState);
                                }}/>
-                        <Button onClick={this.onSubmit}>Submit</Button>
+                        <Button disabled={this.state.isInSubmit} onClick={this.onSubmit}>{this.state.isInSubmit?"Submitting...":"Submit"}</Button>
                     </div>
                 </div>
             </div>

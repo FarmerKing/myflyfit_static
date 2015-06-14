@@ -1,4 +1,4 @@
-
+require("babel/polyfill");
 require("../assets/stylesheets/style.less");
 
 // third party css 
