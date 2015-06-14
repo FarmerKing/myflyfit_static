@@ -20,6 +20,7 @@
     "bootstrap": "~3.3.2",
     "mediaelement": "~2.16.4",
     "swiper": "~3.0.4",
-    "ejs": "~1.0.0"
+    "ejs": "~1.0.0",
+    "react-select": "~0.4.9"
   }
 }

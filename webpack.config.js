@@ -7,12 +7,13 @@ module.exports = {
       "webpack-dev-server/client?http://0.0.0.0:8000",
       "webpack/hot/only-dev-server",
       "./app/src/scripts/main.js"
-    ]
+    ],
+    "contact-us": "./app/src/scripts/contact-us.js"
   },
   output: {
     path: "./app_static/js/",
     publicPath: "/js/",
-    filename: "bundle.js"
+    filename: "[name].js"
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -32,6 +33,11 @@ module.exports = {
       {
         test: /\.less$/,
         loader: "style!css!less"
+      },
+
+      {
+        test: /\.css$/,
+        loader: "style!css"
       },
 
       {
