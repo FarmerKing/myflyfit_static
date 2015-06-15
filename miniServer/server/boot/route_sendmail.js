@@ -25,10 +25,11 @@ module.exports = function(app) {
         ];
 
         function _getField( key ) {
-            var value = req.query[key] || "";
+            var value = (req.query && req.query[key]) || (req.body && req.body[key]) || "";
             return value.trim();
         }
 
+        console.log(JSON.stringify(req.query));
         var firstName = _getField("firstName"); 
         var lastName = _getField("lastName"); 
         var email = _getField("email"); 
@@ -62,8 +63,9 @@ module.exports = function(app) {
 
         var mailOptions = {
             from: "" + firstName + " " + lastName + "<" + email + ">", // sender address
-            to: "king_chen@earlyplan.com", // list of receivers
-            subject: "[FLYFIT CONTACTUS]" + subject, // Subject line
+            to: "service@myflyfit.com",
+            // to: "king_chen@earlyplan.com",
+            subject: "[FLYFIT CONTACTUS] " + subject, // Subject line
             text: text,
             html: html
         };
