@@ -14,7 +14,9 @@
     "react": "^0.13.3",
     "react-bootstrap": "^0.23.1",
     "react-router": "^0.13.3",
+    "react-scroll": "^0.19.0",
     "react-select": "^0.4.9",
+    "react-treeview": "^0.3.12",
     "superagent": "^1.2.0",
     "underscore": "^1.8.3"
   },
