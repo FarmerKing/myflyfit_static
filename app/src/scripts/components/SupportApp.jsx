@@ -2,20 +2,23 @@ import React from "react";
 import Underscore from "underscore";
 import Classnames from "classnames";
 
-import {Input, Button} from "react-bootstrap"
+import {Locations, Location, NavigatableMixin} from "react-router-component"; 
+import {Input, Button} from "react-bootstrap";
 
 
 var tree = [
     {
         text: "FlyFit App",
         ref: "support-flyfit",
+        _href: "/support.html",
         content: "Follow these steps to start using FlyFit for the first time!",
         nodes: [
             {
                 text: "Getting Started (download)",
                 ref: "support-flyfit-gs",
+                _href: "/support.html",
                 content: "",
-                nodes: [
+                _nodes: [
                     {
                         text: "Download the FlyFIt App to your smartphone",
                         ref: "support-flyfit-gs-download"
@@ -30,7 +33,8 @@ var tree = [
             {
                 text: "Pair Flyfit with the FlyFit App",
                 ref: "support-flyfit-pair",
-                nodes: [
+                _href: "/support.html",
+                _nodes: [
                     {
                         text: "Bluetooth Setting", 
                         ref: "support-flyfit-pair-bt",
@@ -45,12 +49,14 @@ var tree = [
             {
                 text: "Sync",
                 ref: "support-flyfit-sync",
+                _href: "/support.html",
                 content: "After pairing, Flyfit will automatically sync data with your smartphone or pad each time tapping the Flyfit icon. Multiple syncing within the same day is power consumptive.", 
             },
             {
                 text: "Battery Life",
                 ref: "support-flyfit-battery",
-                nodes: [ 
+                _href: "/support.html",
+                _nodes: [ 
                     {
                         text: "You can check battery life in the Flyfit info section as long as device is connected.",
                         ref: "support-flyfit-battery-n1"
@@ -63,17 +69,20 @@ var tree = [
             },
             {
                 text: "Home",
+                _href: "/support.html",
                 ref: "support-flyfit-home"
             },
             {
                 text: "Wake Up Alarm & Sleep Reminder",
                 ref: "support-flyfit-wake",
+                _href: "/support.html",
                 content: "You can set wake up alarm and reminder in Flyfit info section."
             },
             {
                 text: "Statistic",
                 ref: "support-flyfit-st", 
-                nodes: [
+                _href: "/support.html",
+                _nodes: [
                     {
                         text: "Check out your daily/weekly/monthly statistic of your activity!", 
                         ref: "support-flyfit-st-n1"
@@ -85,15 +94,18 @@ var tree = [
     {
         text: "Product Manuals",
         ref: "support-pm",
+        _href: "/support_pm.html",
         nodes: [
             {
                 text: "Features",
-                ref: "support-pm-feature"
+                ref: "support-pm-feature",
+                _href: "/support_pm.html",
             },
             {
                 text: "Basic",
                 ref: "support-pm-basic",
-                nodes: [
+                _href: "/support_pm.html",
+                _nodes: [
                     {
                         text: "Charging",
                         ref: "support-pm-basic-charging",
@@ -113,17 +125,89 @@ var tree = [
             },
             {
                 text: "Overview(Icons)",
+                _href: "/support_pm.html",
                 ref: "support-pm-overview"
             },
             {
                 text: "Switching between Modes",
+                _href: "/support_pm.html",
                 ref: "support-pm-modes"
             }
         ]
     }
 ];
 
+function _render3rdNodes (_tree) {
+    return _tree.map( thirdLevelNode => 
+        <li key={thirdLevelNode.ref}>
+            <h3 ref={thirdLevelNode.ref}>{thirdLevelNode.text}</h3>
+            {thirdLevelNode.content}
+        </li>
+    );
+};
+
+function _render2ndNodes (_tree) {
+    return _tree.map( secondLevelNode => 
+        <li key={secondLevelNode.ref}>
+            <h2 ref={secondLevelNode.ref}>{secondLevelNode.text}</h2>
+            {secondLevelNode.content}
+            <ul>
+                {
+                    secondLevelNode.nodes?
+                        _render3rdNodes(secondLevelNode.nodes): 
+                        secondLevelNode._nodes?
+                        _render3rdNodes(secondLevelNode._nodes): null
+                }
+            </ul>
+        </li>
+    );
+};
+
+function _render1stNodes (_tree, path) {
+    return Underscore.chain(_tree)
+    .filter( firstLevelNode => ((path && path == firstLevelNode["_href"]) || (!path)) )
+    .map( firstLevelNode => 
+        <li key={firstLevelNode.ref}>
+            <h1 ref={firstLevelNode.ref}>{firstLevelNode.text}</h1>
+            {firstLevelNode.content}
+            <ol>
+                {firstLevelNode.nodes?_render2ndNodes(firstLevelNode.nodes):null}
+            </ol>
+        </li>
+    )
+    .value();
+};
+
+const SupportManual = React.createClass({
+
+    _scrollTo () {
+        if( this.refs[this.props.scrollToRef] ){
+            jQuery("html,body").animate({
+                scrollTop: jQuery(React.findDOMNode(this.refs[this.props.scrollToRef])).offset().top - 101
+            }, 1000);
+        }
+    },
+
+    componentDidMount: function() {
+        this._scrollTo()
+    },
+
+    componentDidUpdate: function(prevProps, prevState) {
+        this._scrollTo();
+    },
+
+    render () {
+        return (
+            <ul>
+                {_render1stNodes(tree, this.props.href)}
+            </ul>
+        );
+    }
+});
+
 const App = React.createClass({
+    mixins: [ NavigatableMixin ],
+
     getInitialState () {
         return {
         };
@@ -136,46 +220,18 @@ const App = React.createClass({
             // enableLinks: true, 
             onNodeSelected: function(event, data){
                 // Your logic goes here
-                jQuery("html,body").animate({
-                    scrollTop: jQuery(React.findDOMNode(this.refs[data.ref])).offset().top - 101
-                }, 1000);
-                console.log("tt");
+                if( location.pathname != data._href){
+                    this.navigate(data._href);
+                }
+                this.setState({
+                    scrollToRef: data.ref
+                });
             }.bind(this)
         });
     },
 
-    _render3rdNodes (_tree) {
-        return _tree.map( thirdLevelNode => 
-            <li key={thirdLevelNode.ref}>
-                <h3 ref={thirdLevelNode.ref}>{thirdLevelNode.text}</h3>
-                {thirdLevelNode.content}
-            </li>
-        );
-    },
-
-    _render2ndNodes (_tree) {
-        return _tree.map( secondLevelNode => 
-            <li key={secondLevelNode.ref}>
-                <h2 ref={secondLevelNode.ref}>{secondLevelNode.text}</h2>
-                {secondLevelNode.content}
-                <ul>
-                    {secondLevelNode.nodes?this._render3rdNodes(secondLevelNode.nodes):null}
-                </ul>
-            </li>
-        );
-    },
-
-    _renderContent () {
-        return tree.map( firstLevelNode => 
-            <li key={firstLevelNode.ref}>
-                <h1 ref={firstLevelNode.ref}>{firstLevelNode.text}</h1>
-                {firstLevelNode.content}
-                <ol>
-                    {firstLevelNode.nodes?this._render2ndNodes(firstLevelNode.nodes):null}
-                </ol>
-            </li>
-        );
-
+    onNavigation () {
+        console.log(this.state.scrollToRef);
     },
 
     render() {
@@ -185,9 +241,10 @@ const App = React.createClass({
                     <div ref="treeview" style={{width: "360px"}}/>
                 </div>
                 <div className="col-xs-8">
-                    <ul>
-                        {this._renderContent()}
-                    </ul>
+                    <Locations contextual onNavigation={this.onNavigation}>
+                        <Location path="/support.html" href="/support.html" handler={SupportManual} scrollToRef={this.state.scrollToRef}/>
+                        <Location path="/support_pm.html" href="/support_pm.html" handler={SupportManual} scrollToRef={this.state.scrollToRef}/>
+                    </Locations>
                 </div>
             </div>
         );
