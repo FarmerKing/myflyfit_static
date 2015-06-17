@@ -22,6 +22,7 @@
     "swiper": "~3.0.4",
     "ejs": "~1.0.0",
     "react-select": "~0.4.9",
-    "bootstrap-treeview": "~1.2.0"
+    "bootstrap-treeview": "~1.2.0",
+    "font-awesome": "~4.3.0"
   }
 }
