@@ -8,7 +8,8 @@ module.exports = {
       "webpack/hot/only-dev-server",
       "./app/src/scripts/main.js"
     ],
-    "contact-us": "./app/src/scripts/contact-us.js"
+    "contact-us": "./app/src/scripts/contact-us.js",
+    "support": "./app/src/scripts/support.js"
   },
   output: {
     path: "./app_static/js/",
