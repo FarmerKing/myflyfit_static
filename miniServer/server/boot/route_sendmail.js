@@ -62,10 +62,15 @@ module.exports = function(app) {
             "Order Number: " + _getField("orderNumber") + "\n" ; 
 
         var mailOptions = {
-            from: "" + firstName + " " + lastName + "<" + email + ">", // sender address
+            from: firstName + " " + lastName + " <" + email + ">", // sender address
+            sender: firstName + " " + lastName + ' <' + email + ">", // sender address
             to: "service@myflyfit.com",
-            // to: "king_chen@earlyplan.com",
             subject: "[FLYFIT CONTACTUS] " + subject, // Subject line
+            replyTo: email, 
+            headers:  {
+                "Return-Path": "<"+email+">", 
+                "From": firstName + " " + lastName + ' <' + email + ">", // sender address
+            },
             text: text,
             html: html
         };
