@@ -9,7 +9,8 @@ module.exports = {
       "./app/src/scripts/main.js"
     ],
     "contact-us": "./app/src/scripts/contact-us.js",
-    "support": "./app/src/scripts/support.js"
+    "support": "./app/src/scripts/support.js",
+    "faq": "./app/src/scripts/faq.js"
   },
   output: {
     path: "./app_static/js/",
