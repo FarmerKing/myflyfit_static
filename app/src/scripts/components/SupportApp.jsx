@@ -16,6 +16,7 @@ var tree = [
             expanded: false,
         },
         content: "Follow these steps to start using FlyFit for the first time!",
+        nodeOrder: true, // nodes are ordered list, default is unordered list
         nodes: [
             {
                 text: "Getting Started (download)",
@@ -201,6 +202,7 @@ var tree = [
         text: "Product Manuals",
         ref: "support-pm",
         _href: "/support_pm.html",
+        nodeOrder: true,
         state: {
             expanded: false,
         },
