@@ -45,6 +45,7 @@ module.exports = function(app) {
             "<b>Issue Type</b>: " + _getField("issueType") + " <br/>" + 
             "<b>Issue SubType</b>: " + _getField("issueSubType") + " <br/>" + 
             "<b>Name</b>: " + firstName + " " + lastName + " <br/>" + 
+            "<b>Email</b>: " + email + " <br/>" + 
             "<b>Phone</b>: " + _getField("phone") + " <br/>" + 
             "<b>Subject</b>: " + subject + " <br/>" + 
             "<b>Description</b>: " + _getField("description") + " <br/>" + 
@@ -55,6 +56,7 @@ module.exports = function(app) {
             "Issue Type: " + _getField("issueType") + "\n" + 
             "Issue SubType: " + _getField("issueSubType") + "\n" + 
             "Name: " + firstName + "" + lastName + "\n" + 
+            "Email: " + email + "\n" + 
             "Phone: " + _getField("phone") + "\n" + 
             "Subject: " + subject + "\n" + 
             "Description: " + _getField("description") + "\n" + 
