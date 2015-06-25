@@ -21,7 +21,7 @@ var faq = [
                 _content: "Please <a href='/contact-us.html'>contact us</a>, and we will reply to you via e­mail as soon as possible. Alternatively, online meeting could be arranged so that we could examine your FlyFit, but please make an appointment via email first."
             },
             {
-                text: "Hong long does the maintenance take?", 
+                text: "How long does the maintenance take?", 
                 ref: "faq-service-3",
                 _content: "The time required for maintenance usually depends on the nature of the issue and the location you stay. We will notify you how long the maintenance and transportation time would be after we receive your FlyFit. <br/>Please visit the <a href='/return-policy.html'>return and refund site</a> for more information about sending your FlyFit to us."
             },
