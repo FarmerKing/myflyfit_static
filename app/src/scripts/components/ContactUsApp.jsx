@@ -47,13 +47,13 @@ const Step1 = React.createClass({
                 </div>
                 <div className={Classnames("form-group", {"has-error": this.props.issueSubTypeStatus && this.props.issueSubTypeStatus == "error"})}>
                     <label className="control-label">Issue Subtype *</label>
-                    <Select name="issueSubTypes" ref="issueSubTypes" 
+                    <Select name="issueSubTypes" ref="issueSubTypes"
                             value={this.props.issueSubType}
                             disabled={!this.props.issueType}
                             placeholder="Please select a sub category"
-                            searchable={false} 
+                            searchable={false}
                             onChange={ (_,issueSubType) => {
-                                this.props.onChangeIssueSubType(issueSubType[0]) 
+                                this.props.onChangeIssueSubType(issueSubType[0])
                             }}
                             options={this.props.issueType?IssueSubTypes[this.props.issueType.value]:[]}
                     />
@@ -65,7 +65,7 @@ const Step1 = React.createClass({
 
 const Step2 = React.createClass({
     propTypes: {
-        // the state in App 
+        // the state in App
         onChange: React.PropTypes.func
     },
 
@@ -76,7 +76,7 @@ const Step2 = React.createClass({
     },
 
     componentDidUpdate: function(prevProps, prevState) {
-        if( !this.props.submit ) return; 
+        if( !this.props.submit ) return;
         Underscore(Object.keys(this.refs)).some( ref => {
             if( this.props[`${ref}Status`] ){
                 this.refs[ref].getInputDOMNode().focus();
@@ -91,49 +91,49 @@ const Step2 = React.createClass({
                 <div className="form-group">
                     <label className="control-label">* = required field</label>
                 </div>
-                <Input name="firstname" ref="firstName" type="text" hasFeedback 
+                <Input name="firstname" ref="firstName" type="text" hasFeedback
                        value={this.props.firstName}
                        bsStyle={this.props.firstNameStatus || ""}
                        help={this.props.firstNameHelp || ""}
                        onChange={ e => this.props.onChange("firstName", this.refs.firstName.getValue())}
                        label="First Name *"/>
-                <Input name="lastname" ref="lastName" type="text" hasFeedback 
+                <Input name="lastname" ref="lastName" type="text" hasFeedback
                        value={this.props.lastName}
                        bsStyle={this.props.lastNameStatus || ""}
                        help={this.props.lastNameHelp || ""}
                        onChange={ e => this.props.onChange("lastName", this.refs.lastName.getValue())}
                        label="Last Name *"/>
-                <Input name="email" ref="email" type="text" hasFeedback 
+                <Input name="email" ref="email" type="text" hasFeedback
                        value={this.props.email}
                        bsStyle={this.props.emailStatus || ""}
                        help={this.props.emailHelp || ""}
                        onChange={ e => this.props.onChange("email", this.refs.email.getValue())}
                        label="Email *"/>
-                <Input name="phone" ref="phone" type="text" 
+                <Input name="phone" ref="phone" type="text"
                        value={this.props.phone}
                        onChange={ e => this.props.onChange("phone", this.refs.phone.getValue())}
                        label="Phone"/>
-                <Input name="subject" ref="subject" type="text" hasFeedback 
+                <Input name="subject" ref="subject" type="text" hasFeedback
                        value={this.props.subject}
                        bsStyle={this.props.subjectStatus || ""}
                        help={this.props.subjectHelp || ""}
                        onChange={ e => this.props.onChange("subject", this.refs.subject.getValue())}
-                       label="Subject *" 
+                       label="Subject *"
                        placeholder="Please enter a subject"/>
-                <Input name="description" ref="description" type="textarea" hasFeedback 
+                <Input name="description" ref="description" type="textarea" hasFeedback
                        value={this.props.description}
                        bsStyle={this.props.descriptionStatus || ""}
                        help={this.props.descriptionHelp || ""}
                        onChange={ e => this.props.onChange("description", this.refs.description.getValue())}
-                       label="Description *" 
+                       label="Description *"
                        placeholder="Please explain your issue"/>
-                <Input name="country" ref="shippingCountry" type="text" hasFeedback 
+                <Input name="country" ref="shippingCountry" type="text" hasFeedback
                        value={this.props.shippingCountry}
                        bsStyle={this.props.shippingCountryStatus || ""}
                        help={this.props.shippingCountryHelp || ""}
                        onChange={ e => this.props.onChange("shippingCountry", this.refs.shippingCountry.getValue())}
                        label="Shipping Country *" />
-                <Input name="ordernumber" ref="orderNumber" type="text" hasFeedback 
+                <Input name="ordernumber" ref="orderNumber" type="text" hasFeedback
                        value={this.props.orderNumber}
                        bsStyle={this.props.orderNumberStatus || ""}
                        help={this.props.orderNumberHelp || ""}
@@ -144,8 +144,8 @@ const Step2 = React.createClass({
     }
 });
 
-const requiredFields = ["issueType", "issueSubType", "firstName", 
-                        "lastName", "email", 
+const requiredFields = ["issueType", "issueSubType", "firstName",
+                        "lastName", "email",
                         "subject", "description", "shippingCountry"];
 
 const App = React.createClass({
@@ -157,25 +157,25 @@ const App = React.createClass({
             isInSubmit: false,
 
             firstName: "",
-            lastName: "", 
-            email: "", 
-            phone: "", 
-            subject: "", 
+            lastName: "",
+            email: "",
+            phone: "",
+            subject: "",
             description: "",
-            shippingCountry: "", 
+            shippingCountry: "",
             orderNumber: ""
         };
     },
 
     onSubmit (e) {
         var newState = { submit: true };
-        var submit = true; 
+        var submit = true;
         e.preventDefault();
 
         for ( let i in requiredFields ) {
             let requiredKey = requiredFields[i];
             if( !this.state[requiredKey] ){
-                newState[`${requiredKey}Status`] = "error"; 
+                newState[`${requiredKey}Status`] = "error";
                 submit = false;
             }else{
                 newState[`${requiredKey}Status`] = null;
@@ -184,10 +184,10 @@ const App = React.createClass({
 
         if(submit){
           var data = Object.assign({}, this.state, {
-            issueType: this.state.issueType.label || "", 
-            issueSubType: this.state.issueSubType.label || "", 
+            issueType: this.state.issueType.label || "",
+            issueSubType: this.state.issueSubType.label || "",
           })
-          Request.post("//54.65.94.248:3000/contactUs")
+          Request.post("//52.69.46.233:3000/contactUs")
           .set("Accept", "application/json")
           .query(data)
           .end( (e,res) => {
@@ -201,12 +201,12 @@ const App = React.createClass({
                   issueType: null,
                   issueSubType: null,
                   firstName: "",
-                  lastName: "", 
-                  email: "", 
-                  phone: "", 
-                  subject: "", 
+                  lastName: "",
+                  email: "",
+                  phone: "",
+                  subject: "",
                   description: "",
-                  shippingCountry: "", 
+                  shippingCountry: "",
                   orderNumber: ""
                 });
               }
@@ -225,12 +225,12 @@ const App = React.createClass({
                 <div className="row" style={{margin: "50px 20px"}}>
                     <div className="col-xs-12">
                         <h3>How can we help?</h3>
-                        <Step1 onChangeIssueType={ issueType=> this.setState({ issueType, issueSubType:null }) } 
+                        <Step1 onChangeIssueType={ issueType=> this.setState({ issueType, issueSubType:null }) }
                                onChangeIssueSubType={ issueSubType=> this.setState({ issueSubType}) }
                                {...this.state} />
-                        <Step2 {...this.state} 
+                        <Step2 {...this.state}
                                onChange={(key, value)=>{
-                                    var newState = {submit: false}; 
+                                    var newState = {submit: false};
                                     newState[key] = value;
                                     if(value){
                                         newState[`${key}Status`] = null;
